@@ -1,22 +1,29 @@
 
-void triRapide(int *tab, int fin) {
-    int parcours = 0, suivant = fin, tmp;
-    int pivot = tab[fin];
-    while (parcours <= suivant) {
-        while (pivot > tab[parcours])
-            parcours++;
-        while (tab[suivant] > pivot)
-            suivant--;
-        if (parcours <= suivant) {
-            tmp = tab[parcours];
-            tab[parcours] = tab[suivant];
-            tab[suivant] = tmp;
-            parcours++;
-            suivant--;
+void triRapide(int *tab, int lenght) {
+    if (lenght <= 1) return;
+    
+    int index=-1, parcours=0, tmp;
+    int pivot = tab[lenght-1];
+    
+    while (parcours < lenght-1) {
+        if (tab[parcours] < pivot) {
+            index++;
+            tmp = tab[index];
+            tab[index] = tab[parcours];
+            tab[parcours] = tmp;
         }
+        parcours++;
     }
-    if (suivant > 0)
-        triRapide(tab, suivant);
-    if (parcours < fin)
-        triRapide(tab+parcours, fin-parcours);
+    
+    tmp = tab[lenght-1];
+    tab[lenght-1] = tab[++index];
+    tab[index] = tmp;
+
+    triRapide(tab, index);
+    triRapide(tab+index+1, lenght-index);
+    
 }
+
+
+
+

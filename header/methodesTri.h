@@ -1,5 +1,6 @@
 #include "../functions/triRapide.c"
 #include "../functions/triInsertion.c"
+#include "../functions/helper.c"
 
 void triBulle(int [], int );
 void triSelection(int [], int );

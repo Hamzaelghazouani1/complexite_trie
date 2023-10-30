@@ -1,11 +1,14 @@
 #include "../functions/triRapide.c"
 #include "../functions/triInsertion.c"
 #include "../functions/helper.c"
+#include "../functions/triBulle.c"
+#include "../functions/triFusion.c"
+#include "../functions/fusion.c"
 
-void triBulle(int [], int );
-void triSelection(int [], int );
-void triInsertion(int [], int );
-void triRapide(int [], int );
-void triFusion(int [], int );
+void triBulle(int[], int);
+void triSelection(int[], int);
+void triInsertion(int[], int);
+void triRapide(int[], int);
+void triFusion(int[], int);
 
-void (*trier)(int [], int);
+void (*trier)(int[], int);

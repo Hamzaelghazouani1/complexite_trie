@@ -1,4 +1,6 @@
-void tri_fusion(int *tab, int size)
+#include "../functions/fusion.c"
+
+void triFusion(int *tab, int size)
 {
     if (size < 2)
     {
@@ -19,8 +21,8 @@ void tri_fusion(int *tab, int size)
         right[i - mid] = tab[i];
     }
 
-    tri_fusion(left, mid);
-    tri_fusion(right, size - mid);
+    triFusion(left, mid);
+    triFusion(right, size - mid);
     fusion(tab, left, mid, right, size - mid);
 
     free(left);

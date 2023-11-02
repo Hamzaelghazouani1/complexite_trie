@@ -1,4 +1,4 @@
-#include "../functions/fusion.c"
+#include "./fusion.c"
 
 void triFusion(int *tab, int size)
 {

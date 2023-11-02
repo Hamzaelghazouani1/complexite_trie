@@ -6,8 +6,11 @@
 
 
 int main(){
-    int tab[] = {-12, -9, 4, 42, -17, 1, -7, -77, 8, -87, 68, 0};
-    triFusion(tab, 12); 
-    afficherTableau(tab, 12);
+    printf("entrer le nombre d'element du tableau : ");
+    scanf("%d", &nb_points);
+    int tab[nb_points];
+    nb_methode = 6;
+    matrixMesures(tab, nb_points);
+    afficherMatrix(nb_points);
     return 0;
 }

@@ -40,7 +40,7 @@ void calcTri(void (*trier)(int[], int),
              void (*trier5)(int[], int),
              int *tab, int lenght,int parcour){
     mesures[parcour][0] = counterTime(trier, cloneTab(tab,lenght), lenght);
-    // mesures[parcour][1] = counterTime(trier1, cloneTab(tab,lenght), lenght);
+    mesures[parcour][1] = counterTime(trier1, cloneTab(tab,lenght), lenght);
     mesures[parcour][2] = counterTime(trier2, cloneTab(tab,lenght), lenght);
     mesures[parcour][3] = counterTime(trier3, cloneTab(tab,lenght), lenght);
     mesures[parcour][4] = counterTime(trier4, cloneTab(tab,lenght), lenght);
@@ -50,9 +50,8 @@ void calcTri(void (*trier)(int[], int),
 void matrixMesures(int *tab, int lenght){
     RandomInit(tab, lenght);
     for (int i=0; i<lenght; i++){
-        calcTri(triBulle, triInsertion, triRapide, triFusion, selectionSort, heapSort, tab, lenght, i);
+        calcTri(triBulle, triInsertion, triRapide, triFusion, selectionSort, heapSort, tab, i, i);
     }
-        afficherTableau(tab, lenght);
 }
 
 void afficherMatrix(int lenght){

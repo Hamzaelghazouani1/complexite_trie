@@ -38,27 +38,26 @@ void calcTri(void (*trier)(int[], int),
              void (*trier3)(int[], int),
              void (*trier4)(int[], int),
              void (*trier5)(int[], int),
-             int *tab, int lenght,int parcour){
-    mesures[parcour][0] = counterTime(trier, cloneTab(tab,lenght), lenght);
-    mesures[parcour][1] = counterTime(trier1, cloneTab(tab,lenght), lenght);
-    mesures[parcour][2] = counterTime(trier2, cloneTab(tab,lenght), lenght);
-    mesures[parcour][3] = counterTime(trier3, cloneTab(tab,lenght), lenght);
-    mesures[parcour][4] = counterTime(trier4, cloneTab(tab,lenght), lenght);
-    mesures[parcour][5] = counterTime(trier5, cloneTab(tab,lenght), lenght);
+             int *tab, int lenght){
+    mesures[lenght][0] = counterTime(trier, cloneTab(tab,lenght), lenght);
+    mesures[lenght][1] = counterTime(trier1, cloneTab(tab,lenght), lenght);
+    mesures[lenght][2] = counterTime(trier2, cloneTab(tab,lenght), lenght);
+    mesures[lenght][3] = counterTime(trier3, cloneTab(tab,lenght), lenght);
+    mesures[lenght][4] = counterTime(trier4, cloneTab(tab,lenght), lenght);
+    mesures[lenght][5] = counterTime(trier5, cloneTab(tab,lenght), lenght);
 }
 
 void matrixMesures(int *tab, int lenght){
     RandomInit(tab, lenght);
-    for (int i=0; i<lenght; i++){
-        calcTri(triBulle, triInsertion, triRapide, triFusion, selectionSort, heapSort, tab, i, i);
-    }
+    for (int i=0; i<lenght; i++)
+        calcTri(triBulle, triInsertion, triRapide, triFusion, selectionSort, heapSort, tab, i);
+    
 }
 
 void afficherMatrix(int lenght){
     for (int i=0; i<lenght; i++){
-        for (int j=0; j<nb_methode; j++){
-            printf("%f | ", mesures[i][j]);
-        }
+        for (int j=0; j<nb_methode; j++)
+            printf("%f | \n", mesures[i][j]);
         printf("\n");
     }
 }

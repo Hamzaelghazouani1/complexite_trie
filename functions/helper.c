@@ -57,7 +57,7 @@ void matrixMesures(int *tab, int lenght){
 void afficherMatrix(int lenght){
     for (int i=0; i<lenght; i++){
         for (int j=0; j<nb_methode; j++)
-            printf("%f | \n", mesures[i][j]);
+            printf("%f | ", mesures[i][j]);
         printf("\n");
     }
 }

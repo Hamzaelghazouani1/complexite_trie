@@ -11,6 +11,10 @@ int main(){
     int tab[nb_points];
     nb_methode = 6;
     matrixMesures(tab, nb_points);
-    afficherMatrix(nb_points);
+    // afficherMatrix(nb_points);
+    
+
+    writeToFiles(nb_points, nb_methode);
+    gnuPlot();
     return 0;
 }

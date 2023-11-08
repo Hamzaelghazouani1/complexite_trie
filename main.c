@@ -13,6 +13,7 @@ int main(){
     matrixMesures(tab, nb_points);
     // afficherMatrix(nb_points);
     
+    
 
     writeToFiles(nb_points, nb_methode);
     gnuPlot();

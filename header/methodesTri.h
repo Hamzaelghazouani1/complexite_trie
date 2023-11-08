@@ -10,9 +10,7 @@ void triBulle(int[], int);
 void triInsertion(int[], int);
 void triRapide(int[], int);
 void triFusion(int[], int);
-void selectionSort(int[], int);
-void heapSort(int[], int);
-void afficherTableau(int [], int);
-void RandomInit(int [], int);
+void triSelection(int[], int);
+void triTas(int[], int);
 
 void (*trier)(int[], int);

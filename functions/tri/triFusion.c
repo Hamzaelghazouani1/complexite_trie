@@ -1,5 +1,3 @@
-// #include "./fusion.c"
-// Fusionne deux tableaux triés
 void fusion(int tab[], int debut, int milieu, int fin) {
     int taille1 = milieu - debut + 1;
     int taille2 = fin - milieu;
@@ -39,11 +37,9 @@ void fusion(int tab[], int debut, int milieu, int fin) {
     }
 }
 
-// Trie un tableau en utilisant l'algorithme de tri fusion
 void triFusion(int tab[], int taille) {
-    if (taille < 2) {
-        return; // Le tableau est déjà trié
-    }
+    if (taille < 2)
+        return;
 
     int milieu = taille / 2;
     triFusion(tab, milieu);
